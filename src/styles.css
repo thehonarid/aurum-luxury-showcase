@@ -154,3 +154,25 @@ main { min-height: 70vh; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }
+
+/* ===== Refinamento: sem sobreposições, movimento suave ===== */
+.entrada-intro { padding: 4rem 0 5rem; }
+.entrada-intro .display { background: linear-gradient(100deg, var(--text-strong) 30%, var(--gold-soft) 50%, var(--text-strong) 70%); background-size: 250% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; }
+.entrada-intro .lead::after { content: ""; display: block; width: 64px; height: 1px; background: var(--gold); margin: 2rem auto 0; }
+.divisao { aspect-ratio: auto; background: none; display: flex; flex-direction: column; gap: 1.5rem; }
+.divisao img { aspect-ratio: 4 / 5; height: auto; opacity: .85; border-radius: var(--radius); filter: saturate(.85); transition: transform 1.6s var(--ease), opacity 1s var(--ease), filter 1s var(--ease); }
+.divisao:hover img, .divisao:focus-visible img { transform: scale(1.02); opacity: 1; filter: saturate(1); }
+.divisao-texto { position: static; padding: 0 0 1.25rem; background: none; border-bottom: 1px solid var(--line); transition: border-color .8s var(--ease); }
+.divisao:hover .divisao-texto { border-color: var(--gold); }
+.divisao-titulo { transition: letter-spacing .8s var(--ease), color .6s var(--ease); }
+.divisao:hover .divisao-titulo { letter-spacing: .14em; color: var(--gold-soft); }
+.divisao-texto::after { content: "Explorar →"; margin-top: .75rem; font-size: .72rem; letter-spacing: .3em; text-transform: uppercase; color: var(--gold); }
+.badge { position: static; display: inline-block; margin-bottom: .5rem; }
+.card { transition: transform .8s var(--ease), box-shadow .8s var(--ease); }
+.card:hover { transform: translateY(-4px); box-shadow: 0 24px 48px -24px color-mix(in srgb, var(--gold) 25%, transparent); }
+html { scroll-behavior: smooth; }
+@keyframes shimmer { from { background-position: 100% 0; } to { background-position: 0 0; } }
+@media (prefers-reduced-motion: no-preference) {
+  .entrada-intro .display { animation: shimmer 3.5s var(--ease) .3s both; }
+  @supports (animation-timeline: view()) { .reveal { animation-range: entry 0% entry 40%; } }
+}
