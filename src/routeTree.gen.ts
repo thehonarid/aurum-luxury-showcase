@@ -10,33 +10,97 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ContactosRouteImport } from './routes/contactos'
+import { Route as EstatesIndexRouteImport } from './routes/estates.index'
+import { Route as EstatesIdRouteImport } from './routes/estates.$id'
+import { Route as MotorsIndexRouteImport } from './routes/motors.index'
+import { Route as MotorsIdRouteImport } from './routes/motors.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContactosRoute = ContactosRouteImport.update({
+  id: '/contactos',
+  path: '/contactos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EstatesIndexRoute = EstatesIndexRouteImport.update({
+  id: '/estates/',
+  path: '/estates/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EstatesIdRoute = EstatesIdRouteImport.update({
+  id: '/estates/$id',
+  path: '/estates/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MotorsIndexRoute = MotorsIndexRouteImport.update({
+  id: '/motors/',
+  path: '/motors/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MotorsIdRoute = MotorsIdRouteImport.update({
+  id: '/motors/$id',
+  path: '/motors/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contactos': typeof ContactosRoute
+  '/estates/$id': typeof EstatesIdRoute
+  '/motors/$id': typeof MotorsIdRoute
+  '/estates/': typeof EstatesIndexRoute
+  '/motors/': typeof MotorsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contactos': typeof ContactosRoute
+  '/estates/$id': typeof EstatesIdRoute
+  '/motors/$id': typeof MotorsIdRoute
+  '/estates': typeof EstatesIndexRoute
+  '/motors': typeof MotorsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/contactos': typeof ContactosRoute
+  '/estates/$id': typeof EstatesIdRoute
+  '/motors/$id': typeof MotorsIdRoute
+  '/estates/': typeof EstatesIndexRoute
+  '/motors/': typeof MotorsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/contactos'
+    | '/estates/$id'
+    | '/motors/$id'
+    | '/estates/'
+    | '/motors/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    '/' | '/contactos' | '/estates/$id' | '/motors/$id' | '/estates' | '/motors'
+  id:
+    | '__root__'
+    | '/'
+    | '/contactos'
+    | '/estates/$id'
+    | '/motors/$id'
+    | '/estates/'
+    | '/motors/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ContactosRoute: typeof ContactosRoute
+  EstatesIdRoute: typeof EstatesIdRoute
+  MotorsIdRoute: typeof MotorsIdRoute
+  EstatesIndexRoute: typeof EstatesIndexRoute
+  MotorsIndexRoute: typeof MotorsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +112,51 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contactos': {
+      id: '/contactos'
+      path: '/contactos'
+      fullPath: '/contactos'
+      preLoaderRoute: typeof ContactosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/estates/': {
+      id: '/estates/'
+      path: '/estates'
+      fullPath: '/estates/'
+      preLoaderRoute: typeof EstatesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/estates/$id': {
+      id: '/estates/$id'
+      path: '/estates/$id'
+      fullPath: '/estates/$id'
+      preLoaderRoute: typeof EstatesIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/motors/': {
+      id: '/motors/'
+      path: '/motors'
+      fullPath: '/motors/'
+      preLoaderRoute: typeof MotorsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/motors/$id': {
+      id: '/motors/$id'
+      path: '/motors/$id'
+      fullPath: '/motors/$id'
+      preLoaderRoute: typeof MotorsIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ContactosRoute: ContactosRoute,
+  EstatesIdRoute: EstatesIdRoute,
+  MotorsIdRoute: MotorsIdRoute,
+  EstatesIndexRoute: EstatesIndexRoute,
+  MotorsIndexRoute: MotorsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
