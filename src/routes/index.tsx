@@ -1,24 +1,42 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "AURUM — Motors & Estates" },
+      { name: "description", content: "AURUM: automóveis e imobiliário de exceção em Lisboa." },
+      { property: "og:title", content: "AURUM — Motors & Estates" },
+      { property: "og:description", content: "Automóveis e imobiliário de exceção em Lisboa." },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <section className="container entrada">
+      <div className="entrada-intro reveal">
+        <h1 className="display">AURUM</h1>
+        <p className="lead">O raro, escolhido com discrição.</p>
+      </div>
+      <div className="divisoes">
+        <Link to="/motors" className="divisao reveal">
+          <img src="/images/car-1.jpg" alt="Coupé escuro em estúdio com luz dourada" width={1600} height={1000} />
+          <span className="divisao-texto">
+            <span className="eyebrow">Divisão</span>
+            <span className="divisao-titulo">AURUM Motors</span>
+            <span className="muted">Automóveis de coleção e alta performance</span>
+          </span>
+        </Link>
+        <Link to="/estates" className="divisao reveal">
+          <img src="/images/estate-1.jpg" alt="Sala ampla com vista sobre o Tejo ao anoitecer" width={1600} height={1000} />
+          <span className="divisao-texto">
+            <span className="eyebrow">Divisão</span>
+            <span className="divisao-titulo">AURUM Estates</span>
+            <span className="muted">Imóveis singulares em Lisboa</span>
+          </span>
+        </Link>
+      </div>
+    </section>
   );
 }

@@ -1,0 +1,140 @@
+{
+  "empresa": {
+    "nome": "AURUM",
+    "whatsapp": "351910000000",
+    "telefone": "+351 210 000 000",
+    "email": "geral@aurum-exemplo.pt",
+    "morada": "Avenida da Liberdade, 000, 1250-000 Lisboa",
+    "horario": "Segunda a sexta, 10h00–19h00 · Sábado por marcação"
+  },
+  "viaturas": [
+    {
+      "id": "solenne-gt",
+      "marca": "Solenne",
+      "modelo": "GT Coupé",
+      "ano": 2023,
+      "km": 8400,
+      "combustivel": "Gasolina",
+      "preco": 189000,
+      "potencia": "620 cv",
+      "caixa": "Automática, 8 velocidades",
+      "cor": "Cinzento grafite",
+      "lugares": 2,
+      "descricao": "Coupé de grande turismo com historial completo e um único proprietário.",
+      "imagens": [
+        { "src": "/images/car-1.jpg", "alt": "Coupé cinzento grafite em estúdio escuro com luz dourada lateral" },
+        { "src": "/images/interior-car.jpg", "alt": "Interior em pele castanha com tablier escuro" }
+      ]
+    },
+    {
+      "id": "vantor-x7",
+      "marca": "Vantor",
+      "modelo": "X7 Signature",
+      "ano": 2022,
+      "km": 21500,
+      "combustivel": "Híbrido plug-in",
+      "preco": 142000,
+      "potencia": "460 cv",
+      "caixa": "Automática, 8 velocidades",
+      "cor": "Preto obsidiana",
+      "lugares": 5,
+      "descricao": "SUV de luxo com tração integral e pacote de conforto traseiro.",
+      "imagens": [
+        { "src": "/images/car-2.jpg", "alt": "SUV preto em estrada molhada ao entardecer" },
+        { "src": "/images/interior-car.jpg", "alt": "Bancos dianteiros em pele castanha" }
+      ]
+    },
+    {
+      "id": "solenne-berlina",
+      "marca": "Solenne",
+      "modelo": "Berlina Lumière",
+      "ano": 2024,
+      "km": 3200,
+      "combustivel": "Elétrico",
+      "preco": 228000,
+      "potencia": "680 cv",
+      "caixa": "Automática, 1 velocidade",
+      "cor": "Champanhe",
+      "lugares": 4,
+      "descricao": "Berlina elétrica de quatro portas, praticamente nova, com garantia de fábrica.",
+      "imagens": [
+        { "src": "/images/car-3.jpg", "alt": "Berlina cor champanhe em estúdio de betão" },
+        { "src": "/images/interior-car.jpg", "alt": "Habitáculo em pele com luz quente" }
+      ]
+    },
+    {
+      "id": "ardent-spider",
+      "marca": "Ardent",
+      "modelo": "Spider Classique",
+      "ano": 1964,
+      "km": 72000,
+      "combustivel": "Gasolina",
+      "preco": 365000,
+      "potencia": "282 cv",
+      "caixa": "Manual, 5 velocidades",
+      "cor": "Verde inglês",
+      "lugares": 2,
+      "descricao": "Descapotável clássico com restauro integral documentado.",
+      "imagens": [
+        { "src": "/images/car-4.jpg", "alt": "Descapotável clássico verde numa estrada costeira ao pôr do sol" },
+        { "src": "/images/interior-car.jpg", "alt": "Interior em pele castanha" }
+      ]
+    }
+  ],
+  "imoveis": [
+    {
+      "id": "penthouse-santos",
+      "titulo": "Penthouse sobre o Tejo",
+      "tipologia": "T3",
+      "area": 240,
+      "localizacao": "Santos, Lisboa",
+      "preco": 2950000,
+      "quartos": 3,
+      "casasBanho": 3,
+      "estacionamento": 2,
+      "certificado": "A",
+      "caracteristicas": ["Vista rio", "Terraço de 80 m²", "Domótica", "Ar condicionado", "Portaria 24h"],
+      "descricao": "Último piso com janelas de pé-direito total e vista desafogada sobre o rio.",
+      "imagens": [
+        { "src": "/images/estate-1.jpg", "alt": "Sala ampla com sofás claros e janelas sobre o rio ao anoitecer" },
+        { "src": "/images/estate-3.jpg", "alt": "Terraço com piscina ao pôr do sol" }
+      ]
+    },
+    {
+      "id": "palacete-principe-real",
+      "titulo": "Palacete reabilitado",
+      "tipologia": "T5",
+      "area": 410,
+      "localizacao": "Príncipe Real, Lisboa",
+      "preco": 4800000,
+      "quartos": 5,
+      "casasBanho": 5,
+      "estacionamento": 1,
+      "certificado": "B",
+      "caracteristicas": ["Fachada em azulejo", "Jardim privado", "Tetos altos", "Lareira", "Elevador"],
+      "descricao": "Edifício oitocentista integralmente reabilitado, com azulejo original preservado.",
+      "imagens": [
+        { "src": "/images/estate-2.jpg", "alt": "Fachada revestida a azulejo azul com varandas em ferro forjado" },
+        { "src": "/images/estate-1.jpg", "alt": "Sala de estar com luz quente" }
+      ]
+    },
+    {
+      "id": "villa-restelo",
+      "titulo": "Villa contemporânea",
+      "tipologia": "T4",
+      "area": 360,
+      "localizacao": "Restelo, Lisboa",
+      "preco": 3650000,
+      "quartos": 4,
+      "casasBanho": 4,
+      "estacionamento": 3,
+      "certificado": "A+",
+      "caracteristicas": ["Piscina infinita", "Vista mar", "Painéis solares", "Ginásio", "Cozinha equipada"],
+      "descricao": "Arquitetura em pedra escura e vidro, com piscina sobre a encosta.",
+      "imagens": [
+        { "src": "/images/estate-3.jpg", "alt": "Moradia moderna em pedra com piscina infinita ao pôr do sol" },
+        { "src": "/images/estate-1.jpg", "alt": "Sala com grandes janelas de vidro" }
+      ]
+    }
+  ]
+}
