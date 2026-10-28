@@ -56,9 +56,9 @@ function Estates() {
         {lista.map((i) => (
           <li key={i.id} className="reveal">
             <Link to="/estates/$id" params={{ id: i.id }} className="card">
-              <span className="badge">Exemplo</span>
               <img src={i.imagens[0]!.src} alt={i.imagens[0]!.alt} width={1600} height={1000} loading="lazy" />
               <div className="card-body">
+                <span className="badge">Exemplo</span>
                 <p className="eyebrow">{i.tipologia} · {i.area} m²</p>
                 <h2 className="card-title">{i.titulo}</h2>
                 <p className="muted small">{i.localizacao}</p>
