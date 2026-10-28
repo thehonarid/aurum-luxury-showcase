@@ -69,7 +69,7 @@ export function Gallery({ imagens }: { imagens: Imagem[] }) {
   const [i, setI] = useState(0);
   return (
     <div className="gallery">
-      <img src={imagens[i].src} alt={imagens[i].alt} width={1600} height={1000} className="gallery-main" />
+      <img src={imagens[i]!.src} alt={imagens[i]!.alt} width={1600} height={1000} className="gallery-main" />
       {imagens.length > 1 && (
         <div className="gallery-thumbs" role="group" aria-label="Escolher imagem">
           {imagens.map((img, idx) => (

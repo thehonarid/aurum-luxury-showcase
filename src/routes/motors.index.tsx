@@ -56,7 +56,7 @@ function Motors() {
         {lista.map((v) => (
           <li key={v.id} className="reveal">
             <Link to="/motors/$id" params={{ id: v.id }} className="card">
-              <img src={v.imagens[0].src} alt={v.imagens[0].alt} width={1600} height={1000} loading="lazy" />
+              <img src={v.imagens[0]!.src} alt={v.imagens[0]!.alt} width={1600} height={1000} loading="lazy" />
               <div className="card-body">
                 <p className="eyebrow">{v.marca}</p>
                 <h2 className="card-title">{v.modelo}</h2>
